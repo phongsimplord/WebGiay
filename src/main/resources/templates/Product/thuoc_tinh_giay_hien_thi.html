@@ -1,0 +1,1724 @@
+<!doctype html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quản lý thuộc tính giày</title>
+    <link rel="shortcut icon" type="image/png" href="/assets/images/logos/favicon.png"/>
+    <link rel="stylesheet" href="/assets/css/styles.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+<!--  Body Wrapper -->
+<div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+     data-sidebar-position="fixed" data-header-position="fixed">
+    <!-- Sidebar Start -->
+    <aside class="left-sidebar">
+        <!-- Sidebar scroll-->
+        <div>
+            <div class="brand-logo d-flex align-items-center justify-content-between">
+                <a href="Admin/index.html" class="text-nowrap logo-img">
+                    <img src="../assets/images/logos/dark-logo.svg" width="180" alt=""/>
+                </a>
+                <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                    <i class="ti ti-x fs-8"></i>
+                </div>
+            </div>
+            <!-- Sidebar navigation-->
+            <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                <ul id="sidebarnav">
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Home</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="Admin/index.html" aria-expanded="false">
+                            <span>
+                              <i class="ti ti-layout-dashboard"></i>
+                            </span>
+                            <span class="hide-menu">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Sản phẩm</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/admin/product" aria-expanded="false">
+                            <span>
+                              <i class="bi bi-box"></i>
+                            </span>
+                            <span class="hide-menu">Quản lý sản phẩm</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/admin/product-detail" aria-expanded="false">
+                            <span>
+                              <i class="bi bi-box-seam-fill"></i>
+                            </span>
+                            <span class="hide-menu">Quản lý chi tiết sản phẩm</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/admin/product/product-attribution" aria-expanded="false">
+                            <span>
+                              <i class="bi bi-slack"></i>
+                            </span>
+                            <span class="hide-menu">Quản lý thuộc tính</span>
+                        </a>
+                    </li>
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">Tài khoản</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/admin/staff" aria-expanded="false">
+                            <span>
+                                <i class="bi bi-person-vcard"></i>
+                            </span>
+                            <span class="hide-menu">Nhân viên</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="/admin/customer" aria-expanded="false">
+                            <span>
+                                <i class="bi bi-person-circle"></i>
+                            </span>
+                            <span class="hide-menu">Khách hàng</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
+                            <span>
+                              <i class="ti ti-cards"></i>
+                            </span>
+                            <span class="hide-menu">Card</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./ui-forms.html" aria-expanded="false">
+                            <span>
+                              <i class="ti ti-file-description"></i>
+                            </span>
+                            <span class="hide-menu">Forms</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./ui-typography.html" aria-expanded="false">
+                            <span>
+                              <i class="ti ti-typography"></i>
+                            </span>
+                            <span class="hide-menu">Typography</span>
+                        </a>
+                    </li>
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">AUTH</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="Authetication/authentication-login.html" aria-expanded="false">
+                            <span>
+                              <i class="ti ti-login"></i>
+                            </span>
+                            <span class="hide-menu">Login</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="Authetication/authentication-register.html" aria-expanded="false">
+                            <span>
+                              <i class="ti ti-user-plus"></i>
+                            </span>
+                            <span class="hide-menu">Register</span>
+                        </a>
+                    </li>
+                    <li class="nav-small-cap">
+                        <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                        <span class="hide-menu">EXTRA</span>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./icon-tabler.html" aria-expanded="false">
+                            <span>
+                              <i class="ti ti-mood-happy"></i>
+                            </span>
+                            <span class="hide-menu">Icons</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
+                        <a class="sidebar-link" href="./sample-page.html" aria-expanded="false">
+                            <span>
+                              <i class="ti ti-aperture"></i>
+                            </span>
+                            <span class="hide-menu">Sample Page</span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
+                    <div class="d-flex">
+                        <div class="unlimited-access-title me-3">
+                            <h6 class="fw-semibold fs-4 mb-6 text-dark w-85">Upgrade to pro</h6>
+                            <a href="https://adminmart.com/product/modernize-bootstrap-5-admin-template/"
+                               target="_blank" class="btn btn-primary fs-2 fw-semibold lh-sm">Buy Pro</a>
+                        </div>
+                        <div class="unlimited-access-img">
+                            <img src="../assets/images/backgrounds/rocket.png" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- End Sidebar navigation -->
+        </div>
+        <!-- End Sidebar scroll-->
+    </aside>
+    <!--  Sidebar End -->
+    <!--  Main wrapper -->
+    <div class="body-wrapper">
+        <!--  Header Start -->
+        <header class="app-header">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <ul class="navbar-nav">
+                    <li class="nav-item d-block d-xl-none">
+                        <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse" href="javascript:void(0)">
+                            <i class="ti ti-menu-2"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+                            <i class="ti ti-bell-ringing"></i>
+                            <div class="notification bg-primary rounded-circle"></div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+                    <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+                        <a href="https://adminmart.com/product/modernize-free-bootstrap-admin-dashboard/"
+                           target="_blank" class="btn btn-primary">Download Free</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                               data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                <img src="/assets/images/profile/user-1.jpg" alt="" width="35" height="35"
+                                     class="rounded-circle">
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                                 aria-labelledby="drop2">
+                                <div class="message-body">
+                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                                        <i class="ti ti-user fs-6"></i>
+                                        <p class="mb-0 fs-3">My Profile</p>
+                                    </a>
+                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                                        <i class="ti ti-mail fs-6"></i>
+                                        <p class="mb-0 fs-3">My Account</p>
+                                    </a>
+                                    <a href="javascript:void(0)" class="d-flex align-items-center gap-2 dropdown-item">
+                                        <i class="ti ti-list-check fs-6"></i>
+                                        <p class="mb-0 fs-3">My Task</p>
+                                    </a>
+                                    <a href="../Authetication/authentication-login.html"
+                                       class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!--  Header End -->
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5 class="card-title fw-semibold mb-4">Quản lý thương hiệu</h5>
+                            <div class="card">
+                                <div class="card-body">
+                                    <!--                    Start tìm kiếm và các nút-->
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <div class="form-group row">
+                                                <div class="col-6">
+                                                    <input class="form-control" type="text" placeholder="Tìm kiếm"
+                                                           aria-label="default input example">
+                                                </div>
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-info">
+                                                        <i class="bi bi-search"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-success">
+                                                        <i class="bi bi-arrow-clockwise"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-5" style="margin-top: -3px">
+                                            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModalThuongHieu"><i class="bi bi-plus"></i>
+                                                Thêm mới
+                                            </button>
+                                            <button type="button" class="btn btn-outline-dark m-1"
+                                                    data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                                                    class="bi bi-filter-left"></i></button>
+                                        </div>
+                                    </div>
+                                    <!--                    End tìm kiếm và các nút-->
+                                    <!--                                    Start table Thương hiệu-->
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Mã</th>
+                                            <th scope="col">Tên thương hiệu</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="thuonghieu, iterStat : ${pageThuongHieu.content}">
+                                            <td th:text="${thuonghieu.ma}"></td>
+                                            <td th:text="${thuonghieu.ten}"></td>
+                                            <td th:text="${thuonghieu.trangthai == 1 ? 'Hoạt động' : 'Ngừng hoạt động'}"></td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-warning"
+                                                        th:attr="data-bs-toggle='modal', data-bs-target='#detailModalThuongHieu-' + ${iterStat.index}">
+                                                    <i style="color: white" class="bi bi-eye"></i>
+                                                </button>
+                                                <div class="modal fade"
+                                                     th:id="'detailModalThuongHieu-' + ${iterStat.index}" tabindex="-1"
+                                                     th:attr="aria-labelledby='detailModalLabel-' + ${iterStat.index}"
+                                                     aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    th:id="'detailModalLabel-' + ${iterStat.index}">Chi
+                                                                    tiết Thương hiệu</h5>
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <form action="/admin/product-attribution/update-thuong-hieu"
+                                                                              method="post">
+                                                                            <div class="row">
+                                                                                <input name="id"
+                                                                                       th:value="${thuonghieu.id}"
+                                                                                       type="hidden">
+                                                                                <div class="col-6">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputMaThuongHieu1"
+                                                                                               class="form-label">Mã
+                                                                                            thương hiệu:</label>
+                                                                                        <br>
+                                                                                        <input name="ma"
+                                                                                               th:value="${thuonghieu.ma}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputMaThuongHieu1"
+                                                                                               placeholder="Nhập mã thương hiệu">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTenThuongHieu1"
+                                                                                               class="form-label">Tên
+                                                                                            thương hiệu:</label>
+                                                                                        <br>
+                                                                                        <input name="ten"
+                                                                                               th:value="${thuonghieu.ten}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputTenThuongHieu1"
+                                                                                               placeholder="Nhập tên thương hiệu">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTenUrlAnh1"
+                                                                                               class="form-label">Ảnh:</label>
+                                                                                        <br>
+                                                                                        <input name="anh"
+                                                                                               th:value="${thuonghieu.ten_url_anh}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputTenUrlAnh1"
+                                                                                               placeholder="Nhập tên url ảnh">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTrangThaiThuongHieu1"
+                                                                                               class="form-label">Trạng
+                                                                                            thái:</label>
+                                                                                        <br>
+                                                                                        <select name="trangthai"
+                                                                                                class="form-select"
+                                                                                                id="exampleInputTrangThaiThuongHieu1"
+                                                                                                aria-label="Default select example">
+                                                                                            <option th:value="1"
+                                                                                                    th:selected="${thuonghieu.trangthai == 1}">
+                                                                                                Hoạt động
+                                                                                            </option>
+                                                                                            <option th:value="0"
+                                                                                                    th:selected="${thuonghieu.trangthai == 0}">
+                                                                                                Ngừng hoạt động
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button type="submit"
+                                                                                    class="btn btn-primary">Sửa
+                                                                            </button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-sm btn-danger"
+                                                   th:href="@{|/admin/product-attribution/delete-thuong-hieu/${thuonghieu.id}|}">
+                                                    <i style="color: white" class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <!-- Thêm hàng trống nếu số lượng hàng không đủ 5 -->
+                                        <tr th:if="${#lists.size(pageThuongHieu.content) < 5 }"
+                                            th:each="i : ${#numbers.sequence(#lists.size(pageThuongHieu.content) + 1, 5)}">
+                                            <td colspan="4">&nbsp;</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--                                    End table Thương hiệu-->
+                                    <!--                    Start nav-->
+                                    <nav aria-label="Page navigation example" th:if="${pageThuongHieu.totalPages > 0}">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pageth=0)}"
+                                                   aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"
+                                                th:each="pageNumber : ${#numbers.sequence(1, pageThuongHieu.totalPages)}">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pageth=${pageNumber - 1})}"
+                                                   th:text="${pageNumber}"></a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pageth=${pageThuongHieu.totalPages - 1})}"
+                                                   aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!--                    End nav-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="card-title fw-semibold mb-4">Quản lý chất liệu</h5>
+                            <div class="card">
+                                <div class="card-body">
+                                    <!--                    Start tìm kiếm và các nút-->
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <div class="form-group row">
+                                                <div class="col-6">
+                                                    <input class="form-control" type="text" placeholder="Tìm kiếm"
+                                                           aria-label="default input example">
+                                                </div>
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-info">
+                                                        <i class="bi bi-search"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-success">
+                                                        <i class="bi bi-arrow-clockwise"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-5" style="margin-top: -3px">
+                                            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModalChatLieu"><i class="bi bi-plus"></i>
+                                                Thêm mới
+                                            </button>
+                                            <button type="button" class="btn btn-outline-dark m-1"
+                                                    data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                                                    class="bi bi-filter-left"></i></button>
+                                        </div>
+                                    </div>
+                                    <!--                    End tìm kiếm và các nút-->
+                                    <!--                                    Start table Chất liệu-->
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Mã</th>
+                                            <th scope="col">Tên chất liệu</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="chatlieu, iterStat : ${pageChatLieu.content}">
+                                            <td th:text="${chatlieu.ma}"></td>
+                                            <td th:text="${chatlieu.ten}"></td>
+                                            <td th:text="${chatlieu.trangthai == 1 ? 'Hoạt động' : 'Ngừng hoạt động'}"></td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-warning"
+                                                        th:attr="data-bs-toggle='modal', data-bs-target='#detailModalChatLieu-' + ${iterStat.index}">
+                                                    <i style="color: white" class="bi bi-eye"></i>
+                                                </button>
+                                                <div class="modal fade"
+                                                     th:id="'detailModalChatLieu-' + ${iterStat.index}" tabindex="-1"
+                                                     th:attr="aria-labelledby='detailModalLabel-' + ${iterStat.index}"
+                                                     aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    th:id="'detailModalLabel-' + ${iterStat.index}">Chi
+                                                                    tiết chất liệu</h5>
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <form action="/admin/product-attribution/update-chat-lieu"
+                                                                              method="post">
+                                                                            <div class="row">
+                                                                                <input name="id"
+                                                                                       th:value="${chatlieu.id}"
+                                                                                       type="hidden">
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputMaChatLieu1"
+                                                                                               class="form-label">Mã
+                                                                                            chất liệu:</label>
+                                                                                        <br>
+                                                                                        <input name="ma"
+                                                                                               th:value="${chatlieu.ma}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputMaChatLieu1"
+                                                                                               placeholder="Nhập mã chất liệu">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTenChatLieu1"
+                                                                                               class="form-label">Tên
+                                                                                            chất liệu:</label>
+                                                                                        <br>
+                                                                                        <input name="ten"
+                                                                                               th:value="${chatlieu.ten}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputTenChatLieu1"
+                                                                                               placeholder="Nhập tên chất liệu">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTrangThaiChatLieu1"
+                                                                                               class="form-label">Trạng
+                                                                                            thái:</label>
+                                                                                        <br>
+                                                                                        <select name="trangthai"
+                                                                                                class="form-select"
+                                                                                                id="exampleInputTrangThaiChatLieu1"
+                                                                                                aria-label="Default select example">
+                                                                                            <option th:value="1"
+                                                                                                    th:selected="${chatlieu.trangthai == 1}">
+                                                                                                Hoạt động
+                                                                                            </option>
+                                                                                            <option th:value="0"
+                                                                                                    th:selected="${chatlieu.trangthai == 0}">
+                                                                                                Ngừng hoạt động
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button type="submit"
+                                                                                    class="btn btn-primary">Sửa
+                                                                            </button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-sm btn-danger"
+                                                   th:href="@{|/admin/product-attribution/delete-chat-lieu/${chatlieu.id}|}">
+                                                    <i style="color: white" class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <!-- Thêm hàng trống nếu số lượng hàng không đủ 5 -->
+                                        <tr th:if="${#lists.size(pageChatLieu.content) < 5 }"
+                                            th:each="i : ${#numbers.sequence(#lists.size(pageChatLieu.content) + 1, 5)}">
+                                            <td colspan="4">&nbsp;</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--                                    End table Chất liệu-->
+                                    <!--                    Start nav-->
+                                    <nav aria-label="Page navigation example" th:if="${pageChatLieu.totalPages > 0}">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagecl=0)}"
+                                                   aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"
+                                                th:each="pageNumber : ${#numbers.sequence(1, pageChatLieu.totalPages)}">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagecl=${pageNumber - 1})}"
+                                                   th:text="${pageNumber}"></a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagecl=${pageChatLieu.totalPages - 1})}"
+                                                   aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!--                    End nav-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="card-title fw-semibold mb-4">Quản lý đế giày</h5>
+                            <div class="card">
+                                <div class="card-body">
+                                    <!--                    Start tìm kiếm và các nút-->
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <div class="form-group row">
+                                                <div class="col-6">
+                                                    <input class="form-control" type="text" placeholder="Tìm kiếm"
+                                                           aria-label="default input example">
+                                                </div>
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-info">
+                                                        <i class="bi bi-search"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-success">
+                                                        <i class="bi bi-arrow-clockwise"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-5" style="margin-top: -3px">
+                                            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModalDeGiay"><i class="bi bi-plus"></i>
+                                                Thêm mới
+                                            </button>
+                                            <button type="button" class="btn btn-outline-dark m-1"
+                                                    data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                                                    class="bi bi-filter-left"></i></button>
+                                        </div>
+                                    </div>
+                                    <!--                    End tìm kiếm và các nút-->
+                                    <!--                                    Start table Đế giày-->
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Mã</th>
+                                            <th scope="col">Tên đế giày</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="degiay, iterStat : ${pageDeGiay.content}">
+                                            <td th:text="${degiay.ma}"></td>
+                                            <td th:text="${degiay.ten}"></td>
+                                            <td th:text="${degiay.trangthai == 1 ? 'Hoạt động' : 'Ngừng hoạt động'}"></td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-warning"
+                                                        th:attr="data-bs-toggle='modal', data-bs-target='#detailModalDeGiay-' + ${iterStat.index}">
+                                                    <i style="color: white" class="bi bi-eye"></i>
+                                                </button>
+                                                <div class="modal fade" th:id="'detailModalDeGiay-' + ${iterStat.index}"
+                                                     tabindex="-1"
+                                                     th:attr="aria-labelledby='detailModalLabel-' + ${iterStat.index}"
+                                                     aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    th:id="'detailModalLabel-' + ${iterStat.index}">Chi
+                                                                    tiết đế giày</h5>
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <form action="/admin/product-attribution/update-de-giay"
+                                                                              method="post">
+                                                                            <div class="row">
+                                                                                <input name="id" th:value="${degiay.id}"
+                                                                                       type="hidden">
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputMaDeGiay1"
+                                                                                               class="form-label">Mã đế
+                                                                                            giày:</label>
+                                                                                        <br>
+                                                                                        <input name="ma"
+                                                                                               th:value="${degiay.ma}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputMaDeGiay1"
+                                                                                               placeholder="Nhập mã đế giày">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTenDeGiay1"
+                                                                                               class="form-label">Tên đế
+                                                                                            giày:</label>
+                                                                                        <br>
+                                                                                        <input name="ten"
+                                                                                               th:value="${degiay.ten}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputTenDeGiay1"
+                                                                                               placeholder="Nhập tên đế giày">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTrangThaiDeGiay1"
+                                                                                               class="form-label">Trạng
+                                                                                            thái:</label>
+                                                                                        <br>
+                                                                                        <select name="trangthai"
+                                                                                                class="form-select"
+                                                                                                id="exampleInputTrangThaiDeGiay1"
+                                                                                                aria-label="Default select example">
+                                                                                            <option th:value="1"
+                                                                                                    th:selected="${degiay.trangthai == 1}">
+                                                                                                Hoạt động
+                                                                                            </option>
+                                                                                            <option th:value="0"
+                                                                                                    th:selected="${degiay.trangthai == 0}">
+                                                                                                Ngừng hoạt động
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button type="submit"
+                                                                                    class="btn btn-primary">Sửa
+                                                                            </button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-sm btn-danger"
+                                                   th:href="@{|/admin/product-attribution/delete-de-giay/${degiay.id}|}">
+                                                    <i style="color: white" class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <!-- Thêm hàng trống nếu số lượng hàng không đủ 5 -->
+                                        <tr th:if="${#lists.size(pageDeGiay.content) < 5 }"
+                                            th:each="i : ${#numbers.sequence(#lists.size(pageDeGiay.content) + 1, 5)}">
+                                            <td colspan="4">&nbsp;</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--                                    End table Đế giày-->
+                                    <!--                    Start nav-->
+                                    <nav aria-label="Page navigation example" th:if="${pageDeGiay.totalPages > 0}">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagedg=0)}"
+                                                   aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"
+                                                th:each="pageNumber : ${#numbers.sequence(1, pageDeGiay.totalPages)}">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagedg=${pageNumber - 1})}"
+                                                   th:text="${pageNumber}"></a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagedg=${pageDeGiay.totalPages - 1})}"
+                                                   aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!--                    End nav-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="card-title fw-semibold mb-4">Quản lý loại giày</h5>
+                            <div class="card">
+                                <div class="card-body">
+                                    <!--                    Start tìm kiếm và các nút-->
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <div class="form-group row">
+                                                <div class="col-6">
+                                                    <input class="form-control" type="text" placeholder="Tìm kiếm"
+                                                           aria-label="default input example">
+                                                </div>
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-info">
+                                                        <i class="bi bi-search"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-success">
+                                                        <i class="bi bi-arrow-clockwise"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-5" style="margin-top: -3px">
+                                            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModalLoaiGiay"><i class="bi bi-plus"></i>
+                                                Thêm mới
+                                            </button>
+                                            <button type="button" class="btn btn-outline-dark m-1"
+                                                    data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                                                    class="bi bi-filter-left"></i></button>
+                                        </div>
+                                    </div>
+                                    <!--                    End tìm kiếm và các nút-->
+                                    <!--                                    Start table Loại giày-->
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Mã</th>
+                                            <th scope="col">Tên loại giày</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="loaigiay, iterStat : ${pageLoaiGiay.content}">
+                                            <td th:text="${loaigiay.ma}"></td>
+                                            <td th:text="${loaigiay.ten}"></td>
+                                            <td th:text="${loaigiay.trangthai == 1 ? 'Hoạt động' : 'Ngừng hoạt động'}"></td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-warning"
+                                                        th:attr="data-bs-toggle='modal', data-bs-target='#detailModalLoaiGiay-' + ${iterStat.index}">
+                                                    <i style="color: white" class="bi bi-eye"></i>
+                                                </button>
+                                                <div class="modal fade"
+                                                     th:id="'detailModalLoaiGiay-' + ${iterStat.index}" tabindex="-1"
+                                                     th:attr="aria-labelledby='detailModalLabel-' + ${iterStat.index}"
+                                                     aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    th:id="'detailModalLabel-' + ${iterStat.index}">Chi
+                                                                    tiết loại giày</h5>
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <form action="/admin/product-attribution/update-loai-giay"
+                                                                              method="post">
+                                                                            <div class="row">
+                                                                                <input name="id"
+                                                                                       th:value="${loaigiay.id}"
+                                                                                       type="hidden">
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputMaLoaiGiay1"
+                                                                                               class="form-label">Mã
+                                                                                            loại
+                                                                                            giày:</label>
+                                                                                        <br>
+                                                                                        <input name="ma"
+                                                                                               th:value="${loaigiay.ma}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputMaLoaiGiay1"
+                                                                                               placeholder="Nhập mã loại giày">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTenLoaiGiay1"
+                                                                                               class="form-label">Tên
+                                                                                            loại
+                                                                                            giày:</label>
+                                                                                        <br>
+                                                                                        <input name="ten"
+                                                                                               th:value="${loaigiay.ten}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputTenLoaiGiay1"
+                                                                                               placeholder="Nhập tên loại giày">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTrangThaiLoaiGiay1"
+                                                                                               class="form-label">Trạng
+                                                                                            thái:</label>
+                                                                                        <br>
+                                                                                        <select name="trangthai"
+                                                                                                class="form-select"
+                                                                                                id="exampleInputTrangThaiLoaiGiay1"
+                                                                                                aria-label="Default select example">
+                                                                                            <option th:value="1"
+                                                                                                    th:selected="${loaigiay.trangthai == 1}">
+                                                                                                Hoạt động
+                                                                                            </option>
+                                                                                            <option th:value="0"
+                                                                                                    th:selected="${loaigiay.trangthai == 0}">
+                                                                                                Ngừng hoạt động
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button type="submit"
+                                                                                    class="btn btn-primary">Sửa
+                                                                            </button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-sm btn-danger"
+                                                   th:href="@{|/admin/product-attribution/delete-loai-giay/${loaigiay.id}|}">
+                                                    <i style="color: white" class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <!-- Thêm hàng trống nếu số lượng hàng không đủ 5 -->
+                                        <tr th:if="${#lists.size(pageLoaiGiay.content) < 5 }"
+                                            th:each="i : ${#numbers.sequence(#lists.size(pageLoaiGiay.content) + 1, 5)}">
+                                            <td colspan="4">&nbsp;</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--                                    End table Loại giày-->
+                                    <!--                    Start nav-->
+                                    <nav aria-label="Page navigation example" th:if="${pageLoaiGiay.totalPages > 0}">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagelg=0)}"
+                                                   aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"
+                                                th:each="pageNumber : ${#numbers.sequence(1, pageLoaiGiay.totalPages)}">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagelg=${pageNumber - 1})}"
+                                                   th:text="${pageNumber}"></a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagelg=${pageLoaiGiay.totalPages - 1})}"
+                                                   aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!--                    End nav-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="card-title fw-semibold mb-4">Quản lý kích cỡ</h5>
+                            <div class="card">
+                                <div class="card-body">
+                                    <!--                    Start tìm kiếm và các nút-->
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <div class="form-group row">
+                                                <div class="col-6">
+                                                    <input class="form-control" type="text" placeholder="Tìm kiếm"
+                                                           aria-label="default input example">
+                                                </div>
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-info">
+                                                        <i class="bi bi-search"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-success">
+                                                        <i class="bi bi-arrow-clockwise"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-5" style="margin-top: -3px">
+                                            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModalKichCo"><i class="bi bi-plus"></i>
+                                                Thêm mới
+                                            </button>
+                                            <button type="button" class="btn btn-outline-dark m-1"
+                                                    data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                                                    class="bi bi-filter-left"></i></button>
+                                        </div>
+                                    </div>
+                                    <!--                    End tìm kiếm và các nút-->
+                                    <!--                                    Start table Đế giày-->
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Mã</th>
+                                            <th scope="col">Tên kích cỡ</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="kichco, iterStat : ${pageKichCo.content}">
+                                            <td th:text="${kichco.ma}"></td>
+                                            <td th:text="${kichco.ten}"></td>
+                                            <td th:text="${kichco.trangthai == 1 ? 'Hoạt động' : 'Ngừng hoạt động'}"></td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-warning"
+                                                        th:attr="data-bs-toggle='modal', data-bs-target='#detailModalKichCo-' + ${iterStat.index}">
+                                                    <i style="color: white" class="bi bi-eye"></i>
+                                                </button>
+                                                <div class="modal fade" th:id="'detailModalKichCo-' + ${iterStat.index}"
+                                                     tabindex="-1"
+                                                     th:attr="aria-labelledby='detailModalLabel-' + ${iterStat.index}"
+                                                     aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    th:id="'detailModalLabel-' + ${iterStat.index}">Chi
+                                                                    tiết kích cỡ</h5>
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <form action="/admin/product-attribution/update-kich-co"
+                                                                              method="post">
+                                                                            <div class="row">
+                                                                                <input name="id" th:value="${kichco.id}"
+                                                                                       type="hidden">
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputMaKichCo1"
+                                                                                               class="form-label">Mã
+                                                                                            kích
+                                                                                            cỡ:</label>
+                                                                                        <br>
+                                                                                        <input name="ma"
+                                                                                               th:value="${kichco.ma}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputMaKichCo1"
+                                                                                               placeholder="Nhập mã kích cỡ">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTenKichCo1"
+                                                                                               class="form-label">Tên
+                                                                                            kích
+                                                                                            cỡ:</label>
+                                                                                        <br>
+                                                                                        <input name="ten"
+                                                                                               th:value="${kichco.ten}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputTenKichCo1"
+                                                                                               placeholder="Nhập tên kích cỡ">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTrangThaiKichCo1"
+                                                                                               class="form-label">Trạng
+                                                                                            thái:</label>
+                                                                                        <br>
+                                                                                        <select name="trangthai"
+                                                                                                class="form-select"
+                                                                                                id="exampleInputTrangThaiKichCo1"
+                                                                                                aria-label="Default select example">
+                                                                                            <option th:value="1"
+                                                                                                    th:selected="${kichco.trangthai == 1}">
+                                                                                                Hoạt động
+                                                                                            </option>
+                                                                                            <option th:value="0"
+                                                                                                    th:selected="${kichco.trangthai == 0}">
+                                                                                                Ngừng hoạt động
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button type="submit"
+                                                                                    class="btn btn-primary">Sửa
+                                                                            </button>
+                                                                        </form>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-sm btn-danger"
+                                                   th:href="@{|/admin/product-attribution/delete-kich-co/${kichco.id}|}">
+                                                    <i style="color: white" class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <!-- Thêm hàng trống nếu số lượng hàng không đủ 5 -->
+                                        <tr th:if="${#lists.size(pageKichCo.content) < 5 }"
+                                            th:each="i : ${#numbers.sequence(#lists.size(pageKichCo.content) + 1, 5)}">
+                                            <td colspan="4">&nbsp;</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--                                    End table Kích cỡ-->
+                                    <!--                    Start nav-->
+                                    <nav aria-label="Page navigation example" th:if="${pageKichCo.totalPages > 0}">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagedg=0)}"
+                                                   aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"
+                                                th:each="pageNumber : ${#numbers.sequence(1, pageKichCo.totalPages)}">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagekc=${pageNumber - 1})}"
+                                                   th:text="${pageNumber}"></a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagekc=${pageKichCo.totalPages - 1})}"
+                                                   aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!--                    End nav-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <h5 class="card-title fw-semibold mb-4">Quản lý màu sắc</h5>
+                            <div class="card">
+                                <div class="card-body">
+                                    <!--                    Start tìm kiếm và các nút-->
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <div class="form-group row">
+                                                <div class="col-6">
+                                                    <input class="form-control" type="text" placeholder="Tìm kiếm"
+                                                           aria-label="default input example">
+                                                </div>
+                                                <div class="col-6">
+                                                    <button type="button" class="btn btn-info">
+                                                        <i class="bi bi-search"></i>
+                                                    </button>
+                                                    <button type="button" class="btn btn-success">
+                                                        <i class="bi bi-arrow-clockwise"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-5" style="margin-top: -3px">
+                                            <button type="button" class="btn btn-primary m-1" data-bs-toggle="modal"
+                                                    data-bs-target="#exampleModalMauSac"><i class="bi bi-plus"></i>
+                                                Thêm mới
+                                            </button>
+                                            <button type="button" class="btn btn-outline-dark m-1"
+                                                    data-bs-toggle="offcanvas"
+                                                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i
+                                                    class="bi bi-filter-left"></i></button>
+                                        </div>
+                                    </div>
+                                    <!--                    End tìm kiếm và các nút-->
+                                    <!--                                    Start table Màu sắc-->
+                                    <table class="table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col">Mã</th>
+                                            <th scope="col">Tên màu sắc</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Action</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr th:each="mausac, iterStat : ${pageMauSac.content}">
+                                            <td th:text="${mausac.ma}"></td>
+                                            <td th:text="${mausac.ten}"></td>
+                                            <td th:text="${mausac.trangthai == 1 ? 'Hoạt động' : 'Ngừng hoạt động'}"></td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-warning"
+                                                        th:attr="data-bs-toggle='modal', data-bs-target='#detailModalMauSac-' + ${iterStat.index}">
+                                                    <i style="color: white" class="bi bi-eye"></i>
+                                                </button>
+                                                <div class="modal fade" th:id="'detailModalMauSac-' + ${iterStat.index}"
+                                                     tabindex="-1"
+                                                     th:attr="aria-labelledby='detailModalLabel-' + ${iterStat.index}"
+                                                     aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title"
+                                                                    th:id="'detailModalLabel-' + ${iterStat.index}">Chi
+                                                                    tiết màu sắc</h5>
+                                                                <button type="button" class="btn-close"
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <form action="/admin/product-attribution/update-mau-sac"
+                                                                              method="post">
+                                                                            <div class="row">
+                                                                                <input name="id" th:value="${mausac.id}"
+                                                                                       type="hidden">
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputMaMauSac1"
+                                                                                               class="form-label">Mã màu
+                                                                                            sắc:</label>
+                                                                                        <br>
+                                                                                        <input name="ma"
+                                                                                               th:value="${mausac.ma}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputMaMauSac1"
+                                                                                               placeholder="Nhập mã màu sắc">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTenMauSac1"
+                                                                                               class="form-label">Tên
+                                                                                            màu
+                                                                                            sắc:</label>
+                                                                                        <br>
+                                                                                        <input name="ten"
+                                                                                               th:value="${mausac.ten}"
+                                                                                               type="text"
+                                                                                               class="form-control"
+                                                                                               id="exampleInputTenMauSac1"
+                                                                                               placeholder="Nhập tên màu sắc">
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-12">
+                                                                                    <div class="mb-3">
+                                                                                        <label for="exampleInputTrangThaiMauSac1"
+                                                                                               class="form-label">Trạng
+                                                                                            thái:</label>
+                                                                                        <br>
+                                                                                        <select name="trangthai"
+                                                                                                class="form-select"
+                                                                                                id="exampleInputTrangThaiMauSac1"
+                                                                                                aria-label="Default select example">
+                                                                                            <option th:value="1"
+                                                                                                    th:selected="${mausac.trangthai == 1}">
+                                                                                                Hoạt động
+                                                                                            </option>
+                                                                                            <option th:value="0"
+                                                                                                    th:selected="${mausac.trangthai == 0}">
+                                                                                                Ngừng hoạt động
+                                                                                            </option>
+                                                                                        </select>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <button type="submit"
+                                                                                    class="btn btn-primary">Sửa
+                                                                            </button>
+                                                                        </form>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a class="btn btn-sm btn-danger"
+                                                   th:href="@{|/admin/product-attribution/delete-mau-sac/${mausac.id}|}">
+                                                    <i style="color: white" class="bi bi-trash"></i>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <!-- Thêm hàng trống nếu số lượng hàng không đủ 5 -->
+                                        <tr th:if="${#lists.size(pageMauSac.content) < 5 }"
+                                            th:each="i : ${#numbers.sequence(#lists.size(pageMauSac.content) + 1, 5)}">
+                                            <td colspan="4">&nbsp;</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                    <!--                                    End table Màu sắc-->
+                                    <!--                    Start nav-->
+                                    <nav aria-label="Page navigation example" th:if="${pageMauSac.totalPages > 0}">
+                                        <ul class="pagination">
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagems=0)}"
+                                                   aria-label="Previous">
+                                                    <span aria-hidden="true">&laquo;</span>
+                                                </a>
+                                            </li>
+                                            <li class="page-item"
+                                                th:each="pageNumber : ${#numbers.sequence(1, pageMauSac.totalPages)}">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagems=${pageNumber - 1})}"
+                                                   th:text="${pageNumber}"></a>
+                                            </li>
+                                            <li class="page-item">
+                                                <a class="page-link"
+                                                   th:href="@{/admin/product/product-attribution(pagems=${pageMauSac.totalPages - 1})}"
+                                                   aria-label="Next">
+                                                    <span aria-hidden="true">&raquo;</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                    <!--                    End nav-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--            Start modal-->
+            <!--            Start Modal Thương hiệu-->
+            <div class="modal fade" id="exampleModalThuongHieu" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabelTH">Thêm mới Thương hiệu</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="/admin/product-attribution/create-thuong-hieu" method="post"
+                              th:object="${ThuongHieu}">
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputMaThuongHieu"
+                                                           class="form-label">Mã thương hiệu:</label>
+                                                    <br>
+                                                    <input th:field="*{ma}" type="text" class="form-control"
+                                                           id="exampleInputMaThuongHieu"
+                                                           placeholder="Nhập mã thương hiệu">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTenThuongHieu"
+                                                           class="form-label">Tên thương hiệu:</label>
+                                                    <br>
+                                                    <input th:field="*{ten}" type="text" class="form-control"
+                                                           id="exampleInputTenThuongHieu"
+                                                           placeholder="Nhập tên thương hiệu">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTenUrlAnh"
+                                                           class="form-label">Ảnh:</label>
+                                                    <br>
+                                                    <input th:field="*{ten_url_anh}" type="text" class="form-control"
+                                                           id="exampleInputTenUrlAnh" placeholder="Nhập tên url ảnh">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTrangThaiThuongHieu" class="form-label">Trạng
+                                                        thái:</label>
+                                                    <br>
+                                                    <select th:field="*{trangthai}" class="form-select"
+                                                            id="exampleInputTrangThaiThuongHieu"
+                                                            aria-label="Default select example">
+                                                        <option th:value="1">Hoạt động</option>
+                                                        <option th:value="0">Ngừng hoạt động</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--            End Modal Thương hiệu-->
+            <!--            Start Modal Chất liệu-->
+            <div class="modal fade" id="exampleModalChatLieu" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabelCL">Thêm mới Chất liệu</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="/admin/product-attribution/create-chat-lieu" method="post"
+                              th:object="${ChatLieu}">
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputMaChatLieu"
+                                                           class="form-label">Mã chất liệu:</label>
+                                                    <br>
+                                                    <input th:field="*{ma}" type="text" class="form-control"
+                                                           id="exampleInputMaChatLieu"
+                                                           placeholder="Nhập mã chất liệu">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTenChatLieu"
+                                                           class="form-label">Tên chất liệu:</label>
+                                                    <br>
+                                                    <input th:field="*{ten}" type="text" class="form-control"
+                                                           id="exampleInputTenChatLieu"
+                                                           placeholder="Nhập tên chất liệu">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTrangThaiChatLieu" class="form-label">Trạng
+                                                        thái:</label>
+                                                    <br>
+                                                    <select th:field="*{trangthai}" class="form-select"
+                                                            id="exampleInputTrangThaiChatLieu"
+                                                            aria-label="Default select example">
+                                                        <option th:value="1">Hoạt động</option>
+                                                        <option th:value="0">Ngừng hoạt động</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--            End Modal Chất liệu-->
+            <!--            Start Modal Đế giày-->
+            <div class="modal fade" id="exampleModalDeGiay" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabelDG">Thêm mới Đế giày</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="/admin/product-attribution/create-de-giay" method="post"
+                              th:object="${DeGiay}">
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputMaDeGiay"
+                                                           class="form-label">Mã đế giày:</label>
+                                                    <br>
+                                                    <input th:field="*{ma}" type="text" class="form-control"
+                                                           id="exampleInputMaDeGiay"
+                                                           placeholder="Nhập mã đế giày">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTenDeGiay"
+                                                           class="form-label">Tên đế giày:</label>
+                                                    <br>
+                                                    <input th:field="*{ten}" type="text" class="form-control"
+                                                           id="exampleInputTenDeGiay"
+                                                           placeholder="Nhập tên đế giày">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTrangThaiDeGiay" class="form-label">Trạng
+                                                        thái:</label>
+                                                    <br>
+                                                    <select th:field="*{trangthai}" class="form-select"
+                                                            id="exampleInputTrangThaiDeGiay"
+                                                            aria-label="Default select example">
+                                                        <option th:value="1">Hoạt động</option>
+                                                        <option th:value="0">Ngừng hoạt động</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--            End Modal Đế giày-->
+            <!--            Start Modal Loại giày-->
+            <div class="modal fade" id="exampleModalLoaiGiay" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabelLG">Thêm mới Loại giày</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="/admin/product-attribution/create-loai-giay" method="post"
+                              th:object="${LoaiGiay}">
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputMaLoaiGiay"
+                                                           class="form-label">Mã loại giày:</label>
+                                                    <br>
+                                                    <input th:field="*{ma}" type="text" class="form-control"
+                                                           id="exampleInputMaLoaiGiay"
+                                                           placeholder="Nhập mã loại giày">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTenLoaiGiay"
+                                                           class="form-label">Tên loại giày:</label>
+                                                    <br>
+                                                    <input th:field="*{ten}" type="text" class="form-control"
+                                                           id="exampleInputTenLoaiGiay"
+                                                           placeholder="Nhập tên loại giày">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTrangThaiLoaiGiay" class="form-label">Trạng
+                                                        thái:</label>
+                                                    <br>
+                                                    <select th:field="*{trangthai}" class="form-select"
+                                                            id="exampleInputTrangThaiLoaiGiay"
+                                                            aria-label="Default select example">
+                                                        <option th:value="1">Hoạt động</option>
+                                                        <option th:value="0">Ngừng hoạt động</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--            End Modal Loại giày-->
+            <!--            Start Modal Kích cỡ-->
+            <div class="modal fade" id="exampleModalKichCo" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabelKC">Thêm mới Kích cỡ</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="/admin/product-attribution/create-kich-co" method="post" th:object="${KichCo}">
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputMaKichCo"
+                                                           class="form-label">Mã kích cỡ:</label>
+                                                    <br>
+                                                    <input th:field="*{ma}" type="text" class="form-control"
+                                                           id="exampleInputMaKichCo"
+                                                           placeholder="Nhập mã kích cỡ">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTenKichCo"
+                                                           class="form-label">Tên kích cỡ:</label>
+                                                    <br>
+                                                    <input th:field="*{ten}" type="text" class="form-control"
+                                                           id="exampleInputTenKichCo"
+                                                           placeholder="Nhập tên kích cỡ">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTrangThaiKichCo" class="form-label">Trạng
+                                                        thái:</label>
+                                                    <br>
+                                                    <select th:field="*{trangthai}" class="form-select"
+                                                            id="exampleInputTrangThaiKichCo"
+                                                            aria-label="Default select example">
+                                                        <option th:value="1">Hoạt động</option>
+                                                        <option th:value="0">Ngừng hoạt động</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--            End Modal Kích cỡ-->
+            <!--            Start Modal Màu sắc-->
+            <div class="modal fade" id="exampleModalMauSac" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabelMS">Thêm mới Màu sắc</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <form action="/admin/product-attribution/create-mau-sac" method="post" th:object="${MauSac}">
+                            <div class="modal-body">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputMaMauSac"
+                                                           class="form-label">Mã màu sắc:</label>
+                                                    <br>
+                                                    <input th:field="*{ma}" type="text" class="form-control"
+                                                           id="exampleInputMaMauSac"
+                                                           placeholder="Nhập mã màu sắc">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTenMauSac"
+                                                           class="form-label">Tên kích cỡ:</label>
+                                                    <br>
+                                                    <input th:field="*{ten}" type="text" class="form-control"
+                                                           id="exampleInputTenMauSac"
+                                                           placeholder="Nhập tên màu sắc">
+                                                </div>
+                                            </div>
+                                            <div class="col-12">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputTrangThaiMauSac" class="form-label">Trạng
+                                                        thái:</label>
+                                                    <br>
+                                                    <select th:field="*{trangthai}" class="form-select"
+                                                            id="exampleInputTrangThaiMauSac"
+                                                            aria-label="Default select example">
+                                                        <option th:value="1">Hoạt động</option>
+                                                        <option th:value="0">Ngừng hoạt động</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Thêm mới</button>
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--            End Modal Màu sắc-->
+            <!--            End modal-->
+        </div>
+    </div>
+</div>
+<script src="/assets/libs/jquery/dist/jquery.min.js"></script>
+<script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/js/sidebarmenu.js"></script>
+<script src="/assets/js/app.min.js"></script>
+<script src="/assets/libs/simplebar/dist/simplebar.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+<!--Start select2-->
+<script>
+</script>
+<!--End select2-->
+</body>
+
+</html>

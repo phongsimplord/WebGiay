@@ -1,0 +1,17 @@
+.table th {
+    padding: 30px;
+}
+.img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.deleteImg-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+}
+
